@@ -188,18 +188,18 @@ Voila un exemple simple de code javascript à mettre dans votre widget :
 
 ```
 <script>
-    Jeedom.cmd.update['#id#'] = function(_options){
+    jeedom.cmd.update['#id#'] = function(_options){
       $('.cmd[data-cmd_id=#id#]').attr('title','Date de valeur : '+_options.valueDate+'<br/>Date de collecte : '+_options.collectDate)
       $('.cmd[data-cmd_id=#id#] .state').empty().append(_options.display_value +' #unite#');
     }
-    Jeedom.cmd.update['#id#']({display_value:'#state#',valueDate:'#valueDate#',collectDate:'#collectDate#',alertLevel:'#alertLevel#'});
+    jeedom.cmd.update['#id#']({display_value:'#state#',valueDate:'#valueDate#',collectDate:'#collectDate#',alertLevel:'#alertLevel#'});
 </script>
 ```
 
 Ici deux choses importantes :
 
 ```
-Jeedom.cmd.update['#id#'] = function(_options){
+jeedom.cmd.update['#id#'] = function(_options){
   $('.cmd[data-cmd_id=#id#]').attr('title','Date de valeur : '+_options.valueDate+'<br/>Date de collecte : '+_options.collectDate)
   $('.cmd[data-cmd_id=#id#] .state').empty().append(_options.display_value +' #unite#');
 }
@@ -207,7 +207,7 @@ Jeedom.cmd.update['#id#'] = function(_options){
 La fonction appelée lors d'une mise à jour du widget. Elle met alors à jour le code html du widget_template.
 
 ```
-Jeedom.cmd.update['#id#']({display_value:'#state#',valueDate:'#valueDate#',collectDate:'#collectDate#',alertLevel:'#alertLevel#'});
+jeedom.cmd.update['#id#']({display_value:'#state#',valueDate:'#valueDate#',collectDate:'#collectDate#',alertLevel:'#alertLevel#'});
 ```
  L'appel  à cette fonction pour l'initialisation du widget.
 
